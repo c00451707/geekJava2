@@ -1,0 +1,69 @@
+疑问：
+第一次回收：PSYoungGen: 262144K->43510K(305664K)] 262144K->85231K(1005056K)    Young区： 262-43=219  总Heap： 262-100=162
+晋升老年代对象：219-162=57，即第一次GC就有57MB对象晋升。
+为什么显示 第一次Young GC 时就会有对象的晋升，默认不是在回收15次之后还存活才晋升到Old区吗？
+
+实验：
+自适应参数，是不是我吧自适应参数关闭（-XX:-UseAdaptiveSizePolicy），就可以在第一次垃圾回收时，Old区没有内存。
+
+实验方法：
+-XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:-UseAdaptiveSizePolicy -XX:PretenureSizeThreshold=15 -Xmx1g -Xms1g
+正在执行...
+2021-03-28T21:37:28.901+0800: [GC (Allocation Failure) [PSYoungGen: 262144K->43513K(305664K)] 262144K->78301K(1005056K), 0.0151536 secs] [Times: user=0.02 sys=0.06, real=0.02 secs] 
+// 第一次回收 堆内存Old区怎么还是有对象，怎么还是晋升了对象，不是说好的15次（-XX:PretenureSizeThreshold=15）吗？
+... ...
+2021-03-28T21:37:29.510+0800: [Full GC (Ergonomics) [PSYoungGen: 43517K->0K(305664K)] [ParOldGen: 666683K->341518K(699392K)] 710201K->341518K(1005056K), [Metaspace: 3075K->3075K(1056768K)], 0.0528504 secs] [Times: user=0.20 sys=0.03, real=0.05 secs] 
+2021-03-28T21:37:29.615+0800: [GC (Allocation Failure) [PSYoungGen: 262144K->43515K(305664K)] 603662K->417968K(1005056K), 0.0115098 secs] [Times: user=0.09 
+... ...
+执行结束!共生成对象次数:13212
+
+第一次回收 堆内存Old区怎么还是有对象，怎么还是晋升了对象，不是说好的15次（-XX:PretenureSizeThreshold=15）吗？
+
+
+总结：
+串行GC（1G堆内存）：GC执行次数11，在第10次时发生Full GC，时延45ms左右，Full GC时延 60ms。
+串行GC（512MB堆内存）：GC执行次数18，发生7次Full GC，一般GC时延22ms左右，Full GC时延 45ms。
+
+并行GC（1G堆内存）：GC执行次数20，发生1次 Full GC，时延15ms左右，Full GC时延 60ms。
+并行GC（512堆内存）：GC执行次数36，发生9次 Full GC，时延9ms左右，Full GC时延 40ms。
+
+CMS GC的6个阶段：（与日志一一对应）
+阶段1：Initial Mark（初始标记）
+阶段2：Concurrent Mark（并发标记）
+阶段3：Concurrent Preclean（并发预清理）
+阶段4： Final Remark（最终标记）
+阶段5： Concurrent Sweep（并发清除）
+阶段6： Concurrent Reset（并发重置）
+
+CMS GC（1G堆内存）：GC执行次数14，发生2次 Major GC，时延22ms左右，而且波动较大，不像其他GC一样平均。
+CMS GC（512堆内存）：GC执行次数26，发生9次 Major GC，时延13ms左右，而且波动较大，不像其他GC一样平均。
+
+
+G1 GC回收的各个阶段：
+Evacuation Pause: young（纯年轻代模式转移暂停）
+Concurrent Marking（并发标记）
+阶段1: Initial Mark（初始标记）
+阶段2: Root Region Scan（Root区扫描）
+阶段3: Concurrent Mark（并发标记）
+阶段4: Remark（再次标记）
+阶段5: Cleanup（清理）
+Evacuation Pause (mixed)（转移暂停: 混合模式）
+G1 GC（1G堆内存）：GC执行次数27，Young GC 15次，时延5ms左右，Major（mixed） GC 12次，时延7ms左右。（-XX:+PrintGC -XX:+PrintGCDateStamps -Xmx1g -Xms1g -XX:+UseG1GC）
+G1 GC（512堆内存）：GC执行次数89，Young GC 60次，时延2ms左右，Major（mixed） GC 29次，时延4ms左右。（-XX:+PrintGC -XX:+PrintGCDateStamps -Xmx512m -Xms512m -XX:+UseG1GC）
+
+不配置初始化内存：
+-XX:+PrintGCDetails -XX:+PrintGCDateStamps -Xmx1g -XX:+UseParallelGC 
+
+相对于指定 -Xms1g ，GC频率明显比之前要多一些，配置了 -Xms1g 1s内只发生1次Full GC，没配置时发生了3次Full GC
+原因：第一次发生FullGC时，堆内存总大小才590MB，刚开始设置的容量不够大，Old满了，自然会产生FullGC，产生FullGC之后，JVM才会进一步扩大堆内存，最终至最大堆内存设置值。
+同样的道理堆内存变小，更短的时间填满，GC次数自然增大。
+
+
+再总结：
+ 
+堆内存变小，总体GC频率加大，时延降低。
+G1 GC策略：GC 回收频率加快，时延降低，可以看成（粗糙）近似一直有线程在回收垃圾，保证了每次回收的时延小，但这样会导致系统吞吐量降低。
+CMS GC策略：垃圾回收方法较大，解决了 利用多线程回收垃圾的问题，进一步减少了 STW 时间，也降低了时延。
+并行 GC：适合需要吞吐量较大的系统，时延较低，总的回收时间更短。
+
+
