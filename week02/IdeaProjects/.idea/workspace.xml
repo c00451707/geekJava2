@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="62d89522-f275-4365-a864-f47f50ec7417" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\bc-code\repositoryt\repository" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../apache-maven-3.3.3" />
+        <option name="userSettingsFile" value="D:\setting\settings_bc.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1qD4e8ZeAovmgeP3U6uZl7gHxQI" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Java_Course/gitHub/JavaCourseCodes" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.HttpClientTest">
+    <configuration name="HttpClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HttpClient" />
+      <module name="NIOProjectDemo" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HttpClientTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HttpClientTest" />
+      <module name="NIOProjectDemo" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HttpServer01" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HttpServer01" />
+      <module name="NIOProjectDemo" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms512m" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HttpServer02" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="HttpServer02" />
+      <module name="NIOProjectDemo" />
+      <option name="VM_PARAMETERS" value="-Xms512m -Xmx512m" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HttpServer03" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="HttpServer03" />
+      <module name="NIOProjectDemo" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms512m" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NumDifferentIntegerDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="geekTimeTest.NumDifferentIntegerDemo" />
+      <module name="NIOProjectDemo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="geekTimeTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HttpClientTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NIOProjectDemo" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="HttpClientTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HttpClientTest.test_do_get_test_one" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NIOProjectDemo" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="HttpClientTest" />
+      <option name="METHOD_NAME" value="test_do_get_test_one" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.HttpServer03" />
+      <item itemvalue="Application.HttpServer02" />
+      <item itemvalue="Application.HttpServer01" />
+      <item itemvalue="Application.HttpClient" />
+      <item itemvalue="Application.HttpClientTest" />
+      <item itemvalue="JUnit.HttpClientTest" />
+      <item itemvalue="JUnit.HttpClientTest.test_do_get_test_one" />
+      <item itemvalue="Application.NumDifferentIntegerDemo" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.HttpClientTest" />
+        <item itemvalue="JUnit.HttpClientTest.test_do_get_test_one" />
+        <item itemvalue="Application.NumDifferentIntegerDemo" />
+        <item itemvalue="Application.HttpClientTest" />
+        <item itemvalue="Application.HttpClient" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="62d89522-f275-4365-a864-f47f50ec7417" name="Default Changelist" comment="" />
+      <created>1616600918816</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1616600918816</updated>
+      <workItem from="1616600927869" duration="4898000" />
+      <workItem from="1616637377740" duration="2634000" />
+      <workItem from="1616775586022" duration="22000" />
+      <workItem from="1616776131140" duration="2061000" />
+      <workItem from="1616896046230" duration="14078000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="319" y="207" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1616604093926">
+      <screen x="0" y="0" width="1728" height="1112" />
+    </state>
+    <state x="319" y="207" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1728.1112@0.0.1728.1112" timestamp="1616604093926" />
+    <state x="531" y="300" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1616604056304">
+      <screen x="0" y="0" width="1728" height="1112" />
+    </state>
+    <state x="531" y="300" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1728.1112@0.0.1728.1112" timestamp="1616604056304" />
+    <state x="2546" y="182" key="#xdebugger.evaluate" timestamp="1616922522918">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="563" y="195" key="#xdebugger.evaluate/0.0.1728.1112@0.0.1728.1112" timestamp="1616901118041" />
+    <state x="2546" y="182" key="#xdebugger.evaluate/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1616922522918" />
+    <state x="595" y="257" key="FileChooserDialogImpl" timestamp="1616897806558">
+      <screen x="0" y="0" width="1728" height="1112" />
+    </state>
+    <state x="595" y="257" key="FileChooserDialogImpl/0.0.1728.1112/-1920.-138.1920.1040@0.0.1728.1112" timestamp="1616655453199" />
+    <state x="595" y="257" key="FileChooserDialogImpl/0.0.1728.1112@0.0.1728.1112" timestamp="1616897806558" />
+    <state x="661" y="240" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1616638504222" />
+    <state width="1867" height="329" key="GridCell.Tab.0.bottom" timestamp="1616923390586">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1675" height="370" key="GridCell.Tab.0.bottom/0.0.1728.1112@0.0.1728.1112" timestamp="1616904460694" />
+    <state width="1675" height="426" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1616918042037" />
+    <state width="1867" height="329" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1616923390586" />
+    <state width="1867" height="329" key="GridCell.Tab.0.center" timestamp="1616923390586">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1675" height="370" key="GridCell.Tab.0.center/0.0.1728.1112@0.0.1728.1112" timestamp="1616904460694" />
+    <state width="1675" height="426" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1616918042037" />
+    <state width="1867" height="329" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1616923390586" />
+    <state width="1867" height="329" key="GridCell.Tab.0.left" timestamp="1616923390586">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1675" height="370" key="GridCell.Tab.0.left/0.0.1728.1112@0.0.1728.1112" timestamp="1616904460694" />
+    <state width="1675" height="426" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1616918042037" />
+    <state width="1867" height="329" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1616923390586" />
+    <state width="1867" height="329" key="GridCell.Tab.0.right" timestamp="1616923390586">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1675" height="370" key="GridCell.Tab.0.right/0.0.1728.1112@0.0.1728.1112" timestamp="1616904460694" />
+    <state width="1675" height="426" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1616918042037" />
+    <state width="1867" height="329" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1616923390586" />
+    <state width="1867" height="329" key="GridCell.Tab.1.bottom" timestamp="1616923390587">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1675" height="370" key="GridCell.Tab.1.bottom/0.0.1728.1112@0.0.1728.1112" timestamp="1616904460544" />
+    <state width="1867" height="370" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1616918035935" />
+    <state width="1867" height="329" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1616923390587" />
+    <state width="1867" height="329" key="GridCell.Tab.1.center" timestamp="1616923390586">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1675" height="370" key="GridCell.Tab.1.center/0.0.1728.1112@0.0.1728.1112" timestamp="1616904460544" />
+    <state width="1867" height="370" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1616918035935" />
+    <state width="1867" height="329" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1616923390586" />
+    <state width="1867" height="329" key="GridCell.Tab.1.left" timestamp="1616923390586">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1675" height="370" key="GridCell.Tab.1.left/0.0.1728.1112@0.0.1728.1112" timestamp="1616904460544" />
+    <state width="1867" height="370" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1616918035935" />
+    <state width="1867" height="329" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1616923390586" />
+    <state width="1867" height="329" key="GridCell.Tab.1.right" timestamp="1616923390587">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1675" height="370" key="GridCell.Tab.1.right/0.0.1728.1112@0.0.1728.1112" timestamp="1616904460544" />
+    <state width="1867" height="370" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1616918035935" />
+    <state width="1867" height="329" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1616923390587" />
+    <state x="282" y="132" key="Maven.ArtifactSearchDialog" timestamp="1616776855372">
+      <screen x="0" y="0" width="1728" height="1112" />
+    </state>
+    <state x="282" y="132" key="Maven.ArtifactSearchDialog/0.0.1728.1112@0.0.1728.1112" timestamp="1616776855372" />
+    <state x="238" y="60" key="SettingsEditor" timestamp="1616777612584">
+      <screen x="0" y="0" width="1728" height="1112" />
+    </state>
+    <state x="238" y="60" key="SettingsEditor/0.0.1728.1112@0.0.1728.1112" timestamp="1616777612584" />
+    <state x="510" y="327" key="com.intellij.ide.util.TipDialog" timestamp="1616775585680">
+      <screen x="0" y="0" width="1728" height="1112" />
+    </state>
+    <state x="510" y="327" key="com.intellij.ide.util.TipDialog/0.0.1728.1112@0.0.1728.1112" timestamp="1616775585680" />
+    <state x="567" y="306" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1616637381812" />
+    <state x="532" y="274" key="extract.method.dialog" timestamp="1616604201645">
+      <screen x="0" y="0" width="1728" height="1112" />
+    </state>
+    <state x="532" y="274" key="extract.method.dialog/0.0.1728.1112@0.0.1728.1112" timestamp="1616604201645" />
+  </component>
+</project>
