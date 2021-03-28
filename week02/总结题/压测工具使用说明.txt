@@ -1,0 +1,99 @@
+其中比较重要的参数大概有下列几个
+
+-u 可用来指定要压测的网站或是API
+
+-n 可用来指定要压的Request数量
+
+-c 可用来指定Concurrent Request（并发请求）数量
+
+-m 可用来指定要使用的HTTP Method
+
+-h 可用来指定要显示HTTP Header
+
+-q 可用来指定要显示Cookie
+
+-N 指定运行的时间
+
+其他参数：
+
+SuperBenchmarker 4.5.1
+Copyright (C) 2021 Ali Kheyrollahi
+ERROR(S):
+Required option 'u, url' is missing.
+
+  -c, --concurrency            (Default: 1) Number of concurrent requests
+
+  -n, --numberOfRequests       (Default: 100) Total number of requests
+
+  -N, --numberOfSeconds        Number of seconds to run the test. If specified, -n will be ignored.
+
+  -y, --delayInMillisecond     (Default: 0) Delay in millisecond
+
+  -u, --url                    Required. Target URL to call. Can include placeholders.
+
+  -m, --method                 (Default: GET) HTTP Method to use
+
+  -t, --template               Path to request template to use
+
+  -p, --plugin                 Name of the plugin (DLL) to replace placeholders. Should contain one class which
+                               implements IValueProvider. Must reside in the same folder.
+
+  -l, --logfile                Path to the log file storing run stats
+
+  -f, --file                   Path to CSV file providing replacement values for the test
+
+  -a, --TSV                    If you provide a tab-separated-file (TSV) with -f option instead of CSV
+
+  -d, --dryRun                 Runs a single dry run request to make sure all is good
+
+  -e, --timedField             Designates a datetime field in data. If set, requests will be sent according to order
+                               and timing of records.
+
+  -g, --TlsVersion             Version of TLS used. Accepted values are 0, 1, 2 and 3 for TLS 1.0, TLS 1.1 and TLS 1.2
+                               and SSL3, respectively
+
+  -v, --verbose                Provides verbose tracing information
+
+  -b, --tokeniseBody           Tokenise the body
+
+  -k, --cookies                Outputs cookies
+
+  -x, --useProxy               Whether to use default browser proxy. Useful for seeing request/response in Fiddler.
+
+  -q, --onlyRequest            In a dry-run (debug) mode shows only the request.
+
+  -h, --headers                Displays headers for request and response.
+
+  -z, --saveResponses          saves responses in -w parameter or if not provided in\response_<timestamp>
+
+  -w, --responsesFolder        folder to save responses in if and only if -z parameter is set
+
+  -?, --help                   Displays this help.
+
+  -C, --dontcap                Don't Cap to 50 characters when Logging parameters
+
+  -R, --responseRegex          Regex to extract from response. If it has groups, it retrieves the last group.
+
+  -j, --jsonCount              Captures number of elements under the path e.g. root/leaf1/leaf2 finds count of leaf2
+                               children - stores in the log as another parameter. If the array is at the root of the
+                               JSON, use space: -j ' '
+
+  -W, --warmUpPeriod           (Default: 0) Number of seconds to gradually increase number of concurrent users. Warm-up
+                               calls do not affect stats.
+
+  -P, --reportSliceSeconds     (Default: 3) Number of seconds as interval for reporting slices. E.g. if chosen as 5,
+                               report charts have 5 second intervals.
+
+  -F, --reportFolder           Name of the folder where report files get stored. By default it is in
+                               yyyy-MM-dd_HH-mm-ss.ffffff of the start time.
+
+  -B, --dontBrowseToReports    By default it, sb opens the browser with the report of the running test. If specified,
+                               it wil not browse.
+
+  -U, --shuffleData            If specified, shuffles the dataset provided by -f option.
+
+  --help                       Display this help screen.
+
+  --version                    Display version information.
+
+System.Linq.Enumerable+<ExceptIterator>d__73`1[CommandLine.Error]
