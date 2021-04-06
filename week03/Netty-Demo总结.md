@@ -69,7 +69,7 @@ public class HttpInboundInitializer extends ChannelInitializer<SocketChannel> {
 	}
 }
 
-class ChannelInboundHandlerAdapter extends ChannelHandlerAdapter implements ChannelInboundHandler
+// class ChannelInboundHandlerAdapter extends ChannelHandlerAdapter implements ChannelInboundHandler
 
 public class HttpInboundHandler extends ChannelInboundHandlerAdapter {
 
