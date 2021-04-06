@@ -105,9 +105,13 @@ public class HttpInboundHandler extends ChannelInboundHandlerAdapter {
 
 
 步骤四、发送数据，并且将响应数据返回给前台。
+
 import static io.netty.handler.codec.http.HttpResponseStatus.NO_CONTENT;
+
 import static io.netty.handler.codec.http.HttpResponseStatus.OK;
+
 import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
+
 
 
 /**
