@@ -49,6 +49,7 @@ try {
 }
 
 步骤三、为 Channel的管道上添加 自定义Handler。
+
 public class HttpInboundInitializer extends ChannelInitializer<SocketChannel> {
 	
 	private List<String> proxyServer;
