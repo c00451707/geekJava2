@@ -117,8 +117,7 @@ import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
 /**
  *  这个类的理解： HttpOutboundHandler 并非真正的 Outbound,实际上 它只是一个 Service 类，Netty框架 当请求数据返回时会自动调用
  *  ChannelOutboundHandlerAdapter extends ChannelHandlerAdapter implements ChannelOutboundHandler 类的
- *  class ChannelOutboundHandlerAdapter extends ChannelHandlerAdapter implements ChannelOutboundHandler
- *  channelRead 方法，它比较适合对输出做统一处理。
+ *  write 回调 方法，它比较适合对输出做统一处理。
  * HttpOutboundHandler 职责：负责与多个远程后端服务交互，并且将结果返回给前端。
  * 1、该类 通过 HttpEndpointRouter router 路由随机从多个厚度那服务列表平中获取一个后端服务IP+Port。
  * 2、该类 通过 HttpInboundHandler 传入过来的 HttpRequestFilter filter 过滤器，对 Netty过来的请求数据 做统一的过滤、处理。
