@@ -17,5 +17,8 @@
     <!-- 与类注解的@Compent配合使用-->
     <context:component-scan base-package="springPackage.homework05" />
 
+    <!-- 导入simple-beans.xml -->
+    <import resource="simple-beans.xml"/>
+
     
 </beans>

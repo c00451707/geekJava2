@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+    <bean id="simple-bean"
+          class="springPackage.homework05.Halter06">
+        <property name="id" value="20160512" />
+        <property name="name6" value="KK666" />
+        <property name="dream6" value="Mater666" />
+        <property name="perseverance6" value="9" />
+    </bean>
+
+    <bean class="springPackage.homework05.Halter07"/>
+
+    <!-- class: 指定静态内部类全限定类名，内部类和外部类之前通过$连接-->
+    <bean class="springPackage.homework05.Halter07$InnerClass"/>
+
+    <!-- class: 指定创建bean使用的静态工厂类 factory-method: 指定创建bean使用的静态工厂方法 -->
+    <bean class="springPackage.homework05.factory.BeanFactory" factory-method="createDemoBean"/>
+
+    <!--
+  ~ 实例工厂bean，包含创建bean的方法
+-->
+    <bean id="beanInstanceFactory" class="springPackage.homework05.factory.BeanFactory"/>
+    <!--
+      ~ 通过实例工厂方法创建的bean
+      ~ factory-bean: 指定实例工厂bean的id
+      ~ factory-method: 指定实例工厂创建bean的工厂方法
+    -->
+    <bean factory-bean="beanInstanceFactory" factory-method="createDemoBean01"/>
+
+
+</beans>
