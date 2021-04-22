@@ -12,6 +12,8 @@ public interface UserService {
 
     ResultBean insertUser(UserMetaSpec user);
 
+    ResultBean updateUser(UserMetaSpec user);
+
     UserMetaSpec findById(int id);
 
     List<UserMetaSpec> findAllUser();

@@ -42,7 +42,7 @@ public class UserMetaSpec implements MetaData<Integer> {
     private String name;
 
     @Column(name = "age")
-    private int age;
+    private Integer age;
 
     @Column(name = "perseverance")
     private int perseverance;

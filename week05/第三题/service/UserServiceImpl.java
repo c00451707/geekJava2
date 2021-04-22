@@ -25,14 +25,27 @@ public class UserServiceImpl implements UserService {
 
     public ResultBean insertUser(UserMetaSpec user) {
 //        userSpecRepository.save(user);
-        jdbcDemo.addUser(user);
+//        jdbcDemo.addUser(user);
+        jdbcDemo.addUserV2(user);
         return new ResultBean("0","insert success!");
 
     }
 
+    public ResultBean updateUser(UserMetaSpec user) {
+//        userSpecRepository.save(user);
+//        jdbcDemo.addUser(user);
+        jdbcDemo.updateUserV2(user);
+        return new ResultBean("0","update success!");
+
+    }
+
+
     public UserMetaSpec findById(int id) {
-        Optional<UserMetaSpec> userMetaOptional = userSpecRepository.findById(id);
-        return userMetaOptional.get();
+        List<UserMetaSpec> userMetaOptional = userSpecRepository.findById(id);
+//        UserMetaSpec userMetaSpec = userMetaOptional.get(0);
+//        int age = userMetaSpec.getAge();
+//        System.out.println(age);
+        return userMetaOptional.get(0);
     }
 
     public List<UserMetaSpec> findAllUser() {

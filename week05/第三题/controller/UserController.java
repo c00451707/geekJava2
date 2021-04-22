@@ -25,6 +25,12 @@ public class UserController {
         return userService.insertUser(user);
     }
 
+    @RequestMapping(value = "/user/update", method = RequestMethod.PUT)
+    ResultBean update(@RequestBody UserMetaSpec user) {
+//        return userService.find(id);
+        return userService.updateUser(user);
+    }
+
     @RequestMapping(value = "/user/find/{id}", method = RequestMethod.GET)
     UserMetaSpec find(@PathVariable("id") Integer id) {
 //        return userService.find(id);

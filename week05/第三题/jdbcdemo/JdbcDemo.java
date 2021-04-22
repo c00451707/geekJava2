@@ -6,8 +6,10 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import java.lang.ref.PhantomReference;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -60,21 +62,56 @@ public class JdbcDemo {
     }
 
     public int addUser(UserMetaSpec userMetaSpec) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");//
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         String time = LocalDateTime.now().format(formatter);
         //
-        String sql = "INSERT INTO user (id,name,age,perseverance,create_time,last_update_time) " + "VALUES ("//  + ":"
-                + userMetaSpec.getId()+ "," + userMetaSpec.getName() + "," + userMetaSpec.getPerseverance() + ","
-                + time + "," + time + ")"; // "," + new Timestamp(System.currentTimeMillis()) +
+        String sql = "INSERT INTO user (id,name,age,perseverance,create_time,last_update_time) " + "VALUES ("
+                + userMetaSpec.getId()+ ",'" + userMetaSpec.getName() + "'," + userMetaSpec.getAge() + ","+ userMetaSpec.getPerseverance() + ",'"
+                + time + "','" + time + "')";
         try {
-            // INSERT INTO user (id,name,age,perseverance,create_time,last_update_time) VALUES (5,KK-CB-05,9,2021-04-22 12:55:51,2021-04-22 12:55:51)
-            // java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '12:55:51,2021-04-22 12:55:51)' at line 1
             stmt.executeUpdate(sql);
         } catch (SQLException e) {
             System.out.println("数据库插入数据失败！");
             e.printStackTrace();
         }
         return 0;
+    }
+
+    public int addUserV2(UserMetaSpec userMetaSpec) {
+        //sql
+        String sql = "INSERT INTO user (id,name,age,perseverance,create_time,last_update_time)"
+                + "values (" + "?,?,?,?,NOW(),NOW())";
+        try {
+            PreparedStatement preparedStatement = con.prepareStatement(sql);
+            preparedStatement.setInt(1,userMetaSpec.getId());
+            preparedStatement.setString(2,userMetaSpec.getName());
+            preparedStatement.setInt(3,userMetaSpec.getAge());
+            preparedStatement.setInt(4,userMetaSpec.getPerseverance());
+            //执行
+            preparedStatement.execute();
+        } catch (SQLException e) {
+            System.out.println("数据库插入数据失败 -----V2！");
+            e.printStackTrace();
+        }
+        return 1;
+    }
+
+    public int updateUserV2(UserMetaSpec userMetaSpec) {
+        //sql, 每行加空格
+        String sql = "UPDATE user set name=?, age=?, perseverance=?,last_update_time=NOW()  where id=?";
+        try {
+            PreparedStatement preparedStatement = con.prepareStatement(sql);
+            preparedStatement.setString(1,userMetaSpec.getName());
+            preparedStatement.setInt(2,userMetaSpec.getAge());
+            preparedStatement.setInt(3,userMetaSpec.getPerseverance());
+            preparedStatement.setInt(4,userMetaSpec.getId());
+            //执行
+            preparedStatement.execute();
+        } catch (SQLException e) {
+            System.out.println("数据库更新数据失败 -----V2！");
+            e.printStackTrace();
+        }
+        return 1;
     }
 
     public List<UserMetaSpec> getUserList() {
