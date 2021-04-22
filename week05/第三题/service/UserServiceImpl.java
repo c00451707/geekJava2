@@ -24,7 +24,8 @@ public class UserServiceImpl implements UserService {
     JdbcDemo jdbcDemo;
 
     public ResultBean insertUser(UserMetaSpec user) {
-        userSpecRepository.save(user);
+//        userSpecRepository.save(user);
+        jdbcDemo.addUser(user);
         return new ResultBean("0","insert success!");
 
     }

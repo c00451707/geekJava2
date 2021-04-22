@@ -1,6 +1,7 @@
 package io.hust.pony.demoweb.jdbcdemo;
 
 import io.hust.pony.demoweb.meta.UserMetaSpec;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -10,6 +11,9 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +21,15 @@ import java.util.List;
 public class JdbcDemo {
     private Connection con = null;
     private Statement stmt = null;
+
+    @Value("${database.url:NA}")
+    private String url;
+
+    @Value("${database.user.name:root}")
+    private String name;
+
+    @Value("${database.password:}")
+    private String password;
 
     @PostConstruct
     public void initJdbc() {
@@ -34,9 +47,9 @@ public class JdbcDemo {
     // List<UserMetaSpec>
     private void connectJDBC() {
         System.out.println("开启数据库连接诶！");
-        String url = "jdbc:mysql://localhost:3306/macaw_openness?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC" ;
-        String username = "root" ;
-        String password = "" ;
+        String url = this.url;
+        String username = this.name;
+        String password = this.password;
         try {
             con = DriverManager.getConnection(url , username , password );
             stmt = con.createStatement() ;
@@ -44,6 +57,24 @@ public class JdbcDemo {
             System.out.println("数据库连接失败！");
             se.printStackTrace() ;
         }
+    }
+
+    public int addUser(UserMetaSpec userMetaSpec) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");//
+        String time = LocalDateTime.now().format(formatter);
+        //
+        String sql = "INSERT INTO user (id,name,age,perseverance,create_time,last_update_time) " + "VALUES ("//  + ":"
+                + userMetaSpec.getId()+ "," + userMetaSpec.getName() + "," + userMetaSpec.getPerseverance() + ","
+                + time + "," + time + ")"; // "," + new Timestamp(System.currentTimeMillis()) +
+        try {
+            // INSERT INTO user (id,name,age,perseverance,create_time,last_update_time) VALUES (5,KK-CB-05,9,2021-04-22 12:55:51,2021-04-22 12:55:51)
+            // java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '12:55:51,2021-04-22 12:55:51)' at line 1
+            stmt.executeUpdate(sql);
+        } catch (SQLException e) {
+            System.out.println("数据库插入数据失败！");
+            e.printStackTrace();
+        }
+        return 0;
     }
 
     public List<UserMetaSpec> getUserList() {
